@@ -1,0 +1,29 @@
+@use "../../abstracts/colors.module";
+@use "../../abstracts/fonts.module";
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.6rem;
+  width: 2.5rem;
+  background-color: colors.$light-grey;
+  border-radius: 0.2rem;
+
+  @include fonts.clear-sans;
+  font-size: 0.9rem;
+}
+
+.key[data-wide="true"] {
+  width: 3.9rem;
+}
+
+.key[data-status="not-present"] {
+  background-color: colors.$dark-grey;
+}
+.key[data-status="present"] {
+  background-color: colors.$yellow;
+}
+.key[data-status="set"] {
+  background-color: colors.$green;
+}

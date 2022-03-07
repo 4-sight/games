@@ -1,0 +1,14 @@
+@mixin clear-sans {
+  font-family: "Clear Sans", sans-serif;
+  font-weight: 400;
+}
+
+@mixin clear-sans-bold {
+  font-family: "Clear Sans", sans-serif;
+  font-weight: 700;
+}
+
+@mixin merriweather {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+}

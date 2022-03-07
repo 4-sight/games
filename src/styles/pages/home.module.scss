@@ -1,0 +1,34 @@
+@use "src/styles/abstracts/_colors.module.scss";
+@use "src/styles/abstracts/_fonts.module.scss";
+
+.home {
+}
+
+.title {
+  @include fonts.clear-sans-bold;
+  font-size: 3rem;
+  margin-block: 2rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 2rem;
+  gap: 1rem;
+}
+
+.page-link {
+  display: block;
+  color: colors.$light-grey;
+  border: 2px solid colors.$light-grey;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  @include fonts.clear-sans;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: colors.$white;
+    border: 2px solid colors.$white;
+  }
+}

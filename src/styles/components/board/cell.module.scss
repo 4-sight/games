@@ -1,0 +1,103 @@
+@use "../../abstracts/colors.module";
+@use "../../abstracts/fonts.module";
+
+$status-map: (
+  "set": colors.$green,
+  "not-present": colors.$dark-grey,
+  "present": colors.$yellow,
+);
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 2px solid colors.$dark-grey;
+
+  @include fonts.clear-sans;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.cell[data-highlight="true"] {
+  border: 2px solid colors.$light-grey;
+}
+
+.cell[data-bounce="true"] {
+  animation: bounce 0.1s;
+}
+
+.cell[data-status="not-present"] {
+  animation: flip-grey 0.7s var(--delay) forwards;
+}
+
+.cell[data-status="present"] {
+  animation: flip-yellow 0.7s var(--delay) forwards;
+}
+
+.cell[data-status="set"] {
+  animation: flip-green 0.7s var(--delay) forwards;
+}
+
+//=========================================================
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flip-yellow {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+    border: none;
+    background-color: colors.$yellow;
+  }
+  100% {
+    transform: scaleY(1);
+    border: none;
+    background-color: colors.$yellow;
+  }
+}
+
+@keyframes flip-green {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+    border: none;
+    background-color: colors.$green;
+  }
+  100% {
+    transform: scaleY(1);
+    border: none;
+    background-color: colors.$green;
+  }
+}
+
+@keyframes flip-grey {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+    border: none;
+    background-color: colors.$dark-grey;
+  }
+  100% {
+    transform: scaleY(1);
+    border: none;
+    background-color: colors.$dark-grey;
+  }
+}

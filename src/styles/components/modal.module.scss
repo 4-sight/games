@@ -1,0 +1,42 @@
+@use "../abstracts/colors.module";
+@use "../abstracts/fonts.module";
+
+.modalBackground {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(30rem, 80vw);
+  height: min(30rem, 80vh);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  background-color: colors.$black;
+  color: colors.$white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  @include fonts.clear-sans;
+  font-size: 1.8rem;
+}
+
+.playAgainButton {
+  background-color: colors.$green;
+  color: colors.$white;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  margin-top: 2rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+}

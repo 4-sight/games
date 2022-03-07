@@ -1,0 +1,27 @@
+@use "../abstracts/_colors.module.scss";
+@import "./normalize.scss";
+@import "./reset.local.scss";
+@import "./chrome-overrides.scss";
+@import "./typography.scss";
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: colors.$black;
+  color: colors.$white;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+}
